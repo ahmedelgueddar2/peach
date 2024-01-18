@@ -135,15 +135,5 @@ FOR EACH ROW
 INSERT INTO audit_comptes (operation_type, table_name, operation_date)
 VALUES ('UPDATE', 'emprunts', CURDATE());
 
-CREATE TRIGGER verif_agence_trigger
-BEFORE INSERT ON emprunts
-FOR EACH ROW
-BEGIN
-    DECLARE agence_count INT;
-
-    SELECT COUNT(*) INTO agence_count
-    FROM agences
-    WHERE Num_Agence = NEW.Num_Agence;
-
-END
+C
 
