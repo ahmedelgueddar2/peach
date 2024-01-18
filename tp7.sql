@@ -139,6 +139,7 @@ CREATE TRIGGER verif_agence_trigger
 BEFORE INSERT ON emprunts
 FOR EACH ROW
 BEGIN
+
     DECLARE agence_count INT;
 
     SELECT COUNT(*) INTO agence_count
